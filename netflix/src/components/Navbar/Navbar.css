@@ -43,3 +43,10 @@
     opacity: 0;
   }
   
+  .inactive{
+    color:rgb(211, 207, 207);
+  }
+
+  .active{
+    color:white;
+  }
