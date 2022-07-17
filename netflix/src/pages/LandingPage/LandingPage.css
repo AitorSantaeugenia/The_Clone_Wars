@@ -1,0 +1,98 @@
+  .btn-lg {
+    text-decoration: none;
+    font-size: 1.8rem !important;
+    font-weight: 500;
+    padding: 35px;
+    display: flex;
+    color: #fff;
+    margin: 0;
+    background: #e50914;
+    font-size: 25px;
+    text-align: center;
+    max-height: 70px !important;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .btn-lg:hover {
+    background: #fd1c27;
+  }
+
+  /* inner container title and text style */
+  
+  .inner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    line-height: 1.25;
+  }
+
+   .inner-title {
+    font-size: 4rem;
+    width: 44%;
+    line-height: 4.375rem;
+  }
+  .inner-text{
+    font-size: 1.625rem;
+    width: 40%;
+    margin: 1rem auto;
+  }  
+  /* email form */
+  
+  .email-form {
+    margin: 1rem;
+  }
+  .email-form .get-started {
+    display: flex;
+    height: 80%;
+  }
+
+  .chevronRigth{
+  max-height: 22px;
+    font-weight: bold;
+    margin-left: 13px;
+  }
+
+  .email-form .get-started > input {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    height: 70px!important;
+    min-width: 500px;
+    text-indent: 10px;
+  }
+  
+  .email-form .btn-lg {
+    border-radius: 0 2px 2px 0;
+  }
+  
+  /* header */
+  .header {
+    height: 80vh;
+    position: relative;
+    background: url("https://assets.nflxext.com/ffe/siteui/vlv3/1ef84595-1fdb-4404-adac-15215ceeb3ae/23df31f8-deed-416a-8958-a2aab3b3da48/ES-es-20220711-popsignuptwoweeks-perspective_alpha_website_large.jpg")
+      no-repeat center center/cover;
+    box-shadow: inset 0 50px 300px #000, inset 0 -50px 300px #000;
+    border-bottom: 10px #333 solid;
+  }
+  
+  /* brightness and vignette effect*/
+  .overlay {
+    height: 100%;
+    width: 100%;
+    background: #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.4;
+  }
+  
+  .inner-text-membership{
+    font-size: 1.2rem;
+    max-width: none;
+    padding-bottom: 15px;
+  }
+  /* showcase 1 */
