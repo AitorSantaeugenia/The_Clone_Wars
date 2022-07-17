@@ -50,7 +50,7 @@ const LandingPage = () => {
               src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
               alt=""
             />
-            <video className="showcase-animation" autoplay playsinline muted loop>
+            <video className="showcase-animation" autoPlay playsInline muted loop>
               <source
                 src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
                 type="video/mp4"
@@ -108,7 +108,7 @@ const LandingPage = () => {
               src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png"
               alt=""
             />
-            <video className="showcase-animation" autoplay playsinline muted loop>
+            <video className="showcase-animation" autoPlay playsInline muted loop>
               <source
                 src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
                 type="video/mp4"
