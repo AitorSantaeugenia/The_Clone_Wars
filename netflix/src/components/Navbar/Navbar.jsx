@@ -27,19 +27,35 @@ const Navbar = () => {
 
 
   return (
-    <div className={scroll ? "flex items-center justify-between px-4 z-[100] w-full fixed bg-black": "flex items-center justify-between px-4 z-[100] w-full fixed bg-black bg-opacity-10"}>
+    <div className={scroll ? "flex items-center px-4 z-[100] justify-between w-full fixed bg-black": "flex items-center justify-between px-4 z-[100] w-full fixed bg-black bg-opacity-10"}>
       <Link to="/">
       <nav className="logo">
       <img src="https://i.ibb.co/r5krrdz/logo.png" alt="Netflix" />
        </nav>
       </Link>
       {user?.email ? (
+      <>
       <div className="buttonsNavbar">
-          <Link to="/account">
-            <button className="text-white pr-4">Account</button>
-          </Link>
-            <button onClick={handleLogout} className="bg-red-600 px-6 py-2 rounded cursor-pointer text-white">Logout</button>
-        </div>
+        <Link to="/browse">
+          <button className="text-white pr-4 hover:text-gray-300">Home</button>
+        </Link>
+        <Link to="/shows">
+          <button className="text-white pr-4 hover:text-gray-300">TV Shows</button>
+        </Link>
+        <Link to="/movies">
+          <button className="text-white pr-4 hover:text-gray-300">Movies</button>
+        </Link>
+        <Link to="/recently">
+          <button className="text-white pr-4 hover:text-gray-300">Recently Added</button>
+        </Link>
+        <Link to="/account">
+          <button className="text-white pr-4 hover:text-gray-300">My list</button>
+        </Link>
+      </div>
+      <div className="buttonsNavbar">
+          <button onClick={handleLogout} className="bg-red-600 px-6 py-2 rounded cursor-pointer text-white">Logout</button>
+      </div>
+      </>
        ) : (
         <div className="buttonsNavbar">
         <Link to="/login">
