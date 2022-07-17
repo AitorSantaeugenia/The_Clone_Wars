@@ -7,3 +7,10 @@
   content: ["./src/**/*.{jsx, ts, tsx, html, js}"],
 - yarn add axios react-router-dom firebase
 - yarn add react-icons tailwind-scrollbar-hide
+- npm i -g firebase-tools
+
+- firebase init 
+  - select Hosting (not github one)
+  - existing project > select your proyect
+- yarn run build
+- firebase deploy
