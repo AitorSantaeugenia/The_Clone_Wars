@@ -10,7 +10,7 @@
   }
   
   .logo > img {
-    width: 170px;
+    width: 100px;
   }
 
   @media (max-width: 359px) { 
@@ -37,4 +37,9 @@
     }
   }
 
+  .nav-active {
+    background-color:rgba(0, 0, 0, 0);
+    box-shadow: 5px -1px 12px -5px grey;
+    opacity: 0;
+  }
   

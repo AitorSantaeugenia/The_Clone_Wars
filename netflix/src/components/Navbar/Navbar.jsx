@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {UserAuth} from "../../context/AuthContext"
 import "./Navbar.css"
@@ -6,6 +6,7 @@ import "./Navbar.css"
 const Navbar = () => {
   const {user, logOut} = UserAuth()
   const navigate = useNavigate()
+  const [scroll, setScroll] = useState(false);
   // console.log(user)
 
   const handleLogout = async () => {
@@ -14,12 +15,19 @@ const Navbar = () => {
         navigate("/")
       }catch(error){
         console.log(error)
-      }
-        
+      }     
   }
 
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 100);
+    });
+  }, []);
+
+
   return (
-    <div className="flex items-center justify-between p-4 z-[100] w-full fixed">
+    <div className={scroll ? "flex items-center justify-between px-4 z-[100] w-full fixed bg-black": "flex items-center justify-between px-4 z-[100] w-full fixed bg-black bg-opacity-10"}>
       <Link to="/">
       <nav className="logo">
       <img src="https://i.ibb.co/r5krrdz/logo.png" alt="Netflix" />
