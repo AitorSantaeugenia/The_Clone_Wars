@@ -8,6 +8,7 @@ import Signup from "./pages/Signup";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import LoggedInRoute from "./components/LoggedInRoute";
+import Shows from "./pages/Shows/Shows";
 
 function App() {
   return (
@@ -28,6 +29,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/shows"
+            element={
+              <ProtectedRoute>
+                <Shows />
               </ProtectedRoute>
             }
           />
