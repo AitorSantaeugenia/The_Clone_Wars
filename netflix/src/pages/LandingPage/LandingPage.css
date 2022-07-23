@@ -70,7 +70,7 @@
   
   /* header */
   .header {
-    height: 80vh;
+    height: 102vh;
     position: relative;
     background: url("https://assets.nflxext.com/ffe/siteui/vlv3/1ef84595-1fdb-4404-adac-15215ceeb3ae/23df31f8-deed-416a-8958-a2aab3b3da48/ES-es-20220711-popsignuptwoweeks-perspective_alpha_website_large.jpg")
       no-repeat center center/cover;
@@ -95,51 +95,79 @@
     padding-bottom: 15px;
   }
 
+  .container-video{
+    height: 100%;
+    left: 50%;
+    max-height: 54%;
+    max-width: 73%;
+    position: absolute;
+    top: 48%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+  }
+
+  .container-img-video{
+    overflow: hidden;
+    position: relative;
+  }
+
+.border-bottom-hr{
+  border-bottom: 10px #333 solid;
+}
 
   /* Media queries */
+  @media (max-width: 1449px) { 
+    .header {
+      height: 90vh;
+    }
+  }
+
   @media (max-width: 1386px) { 
     .inner-title {
-      width:50%;
-  }
+        width:50%;
+    }
   }
 
   @media (max-width: 1171px) { 
     .inner-title {
-      width:80vw;
-      margin-top: 10rem;
-  }
+        width:80vw;
+        margin-top: 10rem;
+    }
   
-  .inner-title h1{
-    margin-top: 0px;
-  }
+    .inner-title h1{
+      margin-top: 0px;
+    }
   }
 
   @media (max-width: 770px) { 
     .btn-lg {
-      font-size: 1rem !important;
+        font-size: 1rem !important;
     }
   }
 
   @media (max-width: 692px) { 
     .chevronRigth {
-      margin-left: 0px;
-  }
+        margin-left: 0px;
+    }
   }
 
   @media (max-width: 636px) { 
     .email-form .get-started {
-      display: flex;
-      flex-direction: column;
-  }
+        display: flex;
+        flex-direction: column;
+    }
 
-  .email-form .get-started > input {
-    min-width: 70vw;
-  }
-  .inner-title {
-    font-size: 2.9rem;
+    .email-form .get-started > input {
+      min-width: 70vw;
+    }
 
- }
+    .inner-title {
+        font-size: 2.9rem;
+    }
 
+    .header {
+        height: 80vh;
+    }
   }
 
   @media (max-width: 550px) { 
@@ -170,18 +198,6 @@
   }
   }
 
-  @media (max-width: 375px) { 
-    .inner-title {
-      margin-top: 50px;
-  }
-  }
-
-  @media (max-width: 375px) { 
-    .inner-title {
-      margin-top: 50px;
-  }
-  }
-  
   @media (max-width: 283px) { 
     .inner-title {
       margin-top: 250px;

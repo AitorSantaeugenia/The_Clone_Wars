@@ -6,7 +6,7 @@ const LandingPage = () => {
   return (
    <>
    <div className="text-white flex flex-col text-center">
-      <header className="header flex flex-col justify-center">
+      <header className="header flex flex-col justify-center pb-40">
         <div className="inner-container">
           <div className="inner-title">
             <h1 className="font-bold mt-[95px]">Unlimited movies, TV shows, and more.</h1>
@@ -32,30 +32,35 @@ const LandingPage = () => {
       </header>
   </div>
 
-      <section className="showcase">
-        <div className="showcase-container case1">
-          <div className="inner-container">
-            <div className="inner-title">
+      <section className="border-bottom-hr py-4">
+        <div className="flex items-end justify-between m-auto max-w-6xl text-white">
+          <div className="flex-col items-center w-3/6 m-auto">
+            <div className="text-5xl font-bold">
               <h1>Enjoy on your TV.</h1>
             </div>
-            <div className="inner-text">
+            <div className="text-2xl mt-8">
               <p>
                 Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV,
                 Blu-ray players, and more.
               </p>
             </div>
           </div>
-          <div className="showcase-img">
-            <img
-              src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
-              alt=""
-            />
-            <video className="showcase-animation" autoPlay playsInline muted loop>
-              <source
-                src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
-                type="video/mp4"
-              />
-            </video>
+
+          <div className="flex w-3/6 box-border">
+            <div className="container-img-video">
+              <img
+                src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
+                alt=""
+                />
+                <div className="container-video">
+                  <video autoPlay playsInline muted loop>
+                    <source
+                      src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
+                      type="video/mp4"
+                      />
+                  </video>
+                </div>
+            </div>            
           </div>
         </div>
       </section>
