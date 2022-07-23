@@ -33,12 +33,12 @@ const LandingPage = () => {
   </div>
 
       <section className="border-bottom-hr py-4">
-        <div className="flex items-end justify-between m-auto max-w-6xl text-white">
-          <div className="flex-col items-center w-3/6 m-auto">
-            <div className="text-5xl font-bold">
+        <div className="xl:flex 2xl:flex lg:flex md:flex-column items-end justify-between m-auto max-w-6xl text-white">
+          <div className="flex-col items-center w-3/6 m-auto lg:text-center xl:text-left 2xl:text-left sm:text-center md:text-center md:mt-20 xl:m-auto 2xl:m-auto lg:m-auto smler:text-center">
+            <div className="text-5xl font-bold smler:text-3xl sm:mt-10 smler:mt-10 smler:text-center">
               <h1>Enjoy on your TV.</h1>
             </div>
-            <div className="text-2xl mt-8">
+            <div className="text-2xl mt-8 smler:text-xl">
               <p>
                 Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV,
                 Blu-ray players, and more.
@@ -46,7 +46,7 @@ const LandingPage = () => {
             </div>
           </div>
 
-          <div className="flex w-3/6 box-border">
+          <div className="flex w-3/6 box-border md:text-center 2xl:w-3/6 xl:w-3/6 lg:w-3/6 md:w-4/5 sm:w-4/5 2xl:m-auto xl:m-auto lx:m-auto md:m-auto sm:m-auto smler:m-auto md:justify-center sm:justify-center smler:justify-center smler:w-4/5">
             <div className="container-img-video">
               <img
                 src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
