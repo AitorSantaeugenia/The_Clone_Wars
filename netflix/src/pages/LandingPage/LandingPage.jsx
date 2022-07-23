@@ -50,7 +50,7 @@ const LandingPage = () => {
         <div className="container-img-video">
           <img
             src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
-            alt=""
+            alt="Example of website"
             />
             <div className="container-video">
               <video autoPlay playsInline muted loop>
@@ -66,16 +66,17 @@ const LandingPage = () => {
   </section>
 
       <section className="border-bottom-hr py-4">
-        <div className="xl:flex 2xl:flex lg:flex md:flex-column items-end justify-between m-auto max-w-6xl text-white mb-40">
-          <div className="md:flex-column md:m-auto md:w-1/2">
+        <div className="xl:flex 2xl:flex lg:flex md:flex-column items-end justify-between m-auto max-w-6xl text-white mb-40 smler:mb-20">
+          <div className="md:flex-column md:m-auto md:w-4/5 lg:w-4/5">
             <img
               src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
-              alt=""
+              alt="Mobile Stranger Things"
+              className="sm:m-auto md:m-auto lg:m-auto"
             />
-            <div className="flex -mt-40 w-3/5 download-text">
+            <div className="flex sm:-mt-3 2xl:-mt-40 xl:-mt-40 lg:-mt-40 md:-mt-40 w-3/5 download-text sm:w-2/5 md:w-2/5 smler:w-2/5">
               <img
                 src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png"
-                alt=""
+                alt="Mobile Stranger Things download"
                 className="h-[4.5rem]"
               />
               <div className="flex">
@@ -87,7 +88,7 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-          <div className="flex-col items-center w-3/6 m-auto lg:text-center xl:text-left 2xl:text-left sm:text-center md:text-center md:mt-20 xl:m-auto 2xl:m-auto lg:m-auto smler:text-center 2xl:mt-40 xl:mt-40 lg:mt-40">
+          <div className="flex-col items-center w-3/6 m-auto lg:text-center xl:text-left 2xl:text-left sm:text-center sm:mt-20 md:text-center md:mt-20 xl:m-auto 2xl:m-auto lg:m-auto smler:text-center 2xl:mt-40 xl:mt-40 lg:mt-40">
             <div className="text-5xl font-bold smler:text-3xl sm:mt-10 smler:mt-10 smler:text-center">
               <h1>Download your shows to watch offline.</h1>
             </div>

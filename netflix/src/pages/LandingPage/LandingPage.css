@@ -128,7 +128,7 @@
   transform: translateX(-50%);
   overflow: hidden;
   position: relative;
-  justify-content: start;
+  justify-content: flex-start;
   min-height:100px;
 }
 .download-icon{
