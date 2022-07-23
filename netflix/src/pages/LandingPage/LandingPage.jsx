@@ -32,62 +32,66 @@ const LandingPage = () => {
       </header>
   </div>
 
-      <section className="border-bottom-hr py-4">
-        <div className="xl:flex 2xl:flex lg:flex md:flex-column items-end justify-between m-auto max-w-6xl text-white">
-          <div className="flex-col items-center w-3/6 m-auto lg:text-center xl:text-left 2xl:text-left sm:text-center md:text-center md:mt-20 xl:m-auto 2xl:m-auto lg:m-auto smler:text-center">
-            <div className="text-5xl font-bold smler:text-3xl sm:mt-10 smler:mt-10 smler:text-center">
-              <h1>Enjoy on your TV.</h1>
-            </div>
-            <div className="text-2xl mt-8 smler:text-xl">
-              <p>
-                Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV,
-                Blu-ray players, and more.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex w-3/6 box-border md:text-center 2xl:w-3/6 xl:w-3/6 lg:w-3/6 md:w-4/5 sm:w-4/5 2xl:m-auto xl:m-auto lx:m-auto md:m-auto sm:m-auto smler:m-auto md:justify-center sm:justify-center smler:justify-center smler:w-4/5">
-            <div className="container-img-video">
-              <img
-                src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
-                alt=""
-                />
-                <div className="container-video">
-                  <video autoPlay playsInline muted loop>
-                    <source
-                      src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
-                      type="video/mp4"
-                      />
-                  </video>
-                </div>
-            </div>            
-          </div>
+  <section className="border-bottom-hr py-4">
+    <div className="xl:flex 2xl:flex lg:flex md:flex-column items-end justify-between m-auto max-w-6xl text-white">
+      <div className="flex-col items-center w-3/6 m-auto lg:text-center xl:text-left 2xl:text-left sm:text-center md:text-center md:mt-20 xl:m-auto 2xl:m-auto lg:m-auto smler:text-center">
+        <div className="text-5xl font-bold smler:text-3xl sm:mt-10 smler:mt-10 smler:text-center">
+          <h1>Enjoy on your TV.</h1>
         </div>
-      </section>
+        <div className="text-2xl mt-8 smler:text-xl">
+          <p>
+            Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV,
+            Blu-ray players, and more.
+          </p>
+        </div>
+      </div>
 
-      <section className="showcase">
-        <div className="showcase-container case2">
-          <div className="showcase-img">
+      <div className="flex w-3/6 box-border md:text-center 2xl:w-3/6 xl:w-3/6 lg:w-3/6 md:w-4/5 sm:w-4/5 2xl:m-auto xl:m-auto lx:m-auto md:m-auto sm:m-auto smler:m-auto md:justify-center sm:justify-center smler:justify-center smler:w-4/5">
+        <div className="container-img-video">
+          <img
+            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
+            alt=""
+            />
+            <div className="container-video">
+              <video autoPlay playsInline muted loop>
+                <source
+                  src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
+                  type="video/mp4"
+                  />
+              </video>
+            </div>
+        </div>            
+      </div>
+    </div>
+  </section>
+
+      <section className="border-bottom-hr py-4">
+        <div className="xl:flex 2xl:flex lg:flex md:flex-column items-end justify-between m-auto max-w-6xl text-white mb-40">
+          <div className="md:flex-column md:m-auto md:w-1/2">
             <img
               src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
               alt=""
             />
-            <div className="downloading">
+            <div className="flex -mt-40 w-3/5 download-text">
               <img
                 src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png"
                 alt=""
+                className="h-[4.5rem]"
               />
-              <div className="download-text">
-                <h1>Stranger Things</h1>
-                <p>Downloading...</p>
+              <div className="flex">
+                <div className="flex-column ml-5">
+                  <h1 className="font-bold">Stranger Things</h1>
+                  <div className="text-blue-500">Downloading...</div>
+                </div>
+                <div class="download-icon md:ml-5"></div>
               </div>
             </div>
           </div>
-          <div className="inner-container">
-            <div className="inner-title">
+          <div className="flex-col items-center w-3/6 m-auto lg:text-center xl:text-left 2xl:text-left sm:text-center md:text-center md:mt-20 xl:m-auto 2xl:m-auto lg:m-auto smler:text-center 2xl:mt-40 xl:mt-40 lg:mt-40">
+            <div className="text-5xl font-bold smler:text-3xl sm:mt-10 smler:mt-10 smler:text-center">
               <h1>Download your shows to watch offline.</h1>
             </div>
-            <div className="inner-text">
+            <div className="text-2xl mt-8 smler:text-xl">
               <p>
                 Save your favorites easily and always have something to watch.
               </p>
@@ -95,6 +99,7 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+
       <section className="showcase">
         <div className="showcase-container case3">
           <div className="inner-container">
