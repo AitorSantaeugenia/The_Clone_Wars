@@ -1,6 +1,7 @@
 import React from 'react'
 import './LandingPage.css'
-import {BsChevronRight} from 'react-icons/bs'
+import {BsChevronRight, BsGlobe} from 'react-icons/bs'
+import {MdArrowDropDown} from 'react-icons/md'
 
 const LandingPage = () => {
   return (
@@ -101,41 +102,41 @@ const LandingPage = () => {
     </div>
   </section>
 
-      <section className="border-bottom-hr py-4 mt-20">
-        <div className="xl:flex 2xl:flex lg:flex md:flex-column items-center justify-center m-auto max-w-6xl text-white smler:mb-20">
-          <div className="inner-container w-1/2 md:w-full sm:text-center sm:w-full sm:mb-10 smler:text-center smler:w-full smler:mb-10">
-            <div className="text-5xl text-center font-bold smler:text-3xl sm:mt-10 smler:mt-10 smler:text-center"> 
-              <h1>Watch everywhere.</h1>
-            </div>
-            <div className="text-2xl mt-8 smler:text-xl md:mb-20 md:w-1/2">
-              <p className="text-center">
-                Stream unlimited movies and TV shows on your phone, tablet,
-                laptop, and TV without paying more.
-              </p>
-            </div>
-          </div>
-          <div className="flex w-3/6 box-border md:text-center 2xl:w-3/6 xl:w-3/6 lg:w-3/6 md:w-4/5 sm:w-4/5 2xl:m-auto xl:m-auto lx:m-auto md:m-auto sm:m-auto smler:m-auto md:justify-center sm:justify-center smler:justify-center smler:w-4/5">
-            <div className="container-img-video">
-              <img
-                src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png"
-                alt="Ipad with movies"
+  <section className="border-bottom-hr py-4 mt-20">
+    <div className="xl:flex 2xl:flex lg:flex md:flex-column items-center justify-center m-auto max-w-6xl text-white smler:mb-20">
+      <div className="inner-container w-1/2 md:w-full sm:text-center sm:w-full sm:mb-10 smler:text-center smler:w-full smler:mb-10">
+        <div className="text-5xl text-center font-bold smler:text-3xl sm:mt-10 smler:mt-10 smler:text-center"> 
+          <h1>Watch everywhere.</h1>
+        </div>
+        <div className="text-2xl mt-8 smler:text-xl md:mb-20 md:w-1/2">
+          <p className="text-center">
+            Stream unlimited movies and TV shows on your phone, tablet,
+            laptop, and TV without paying more.
+          </p>
+        </div>
+      </div>
+      <div className="flex w-3/6 box-border md:text-center 2xl:w-3/6 xl:w-3/6 lg:w-3/6 md:w-4/5 sm:w-4/5 2xl:m-auto xl:m-auto lx:m-auto md:m-auto sm:m-auto smler:m-auto md:justify-center sm:justify-center smler:justify-center smler:w-4/5">
+        <div className="container-img-video">
+          <img
+            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png"
+            alt="Ipad with movies"
+          />
+          <div className="container-video-section3">
+            <video autoPlay playsInline muted loop>
+              <source
+                src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
+                type="video/mp4"
               />
-              <div className="container-video-section3">
-                <video autoPlay playsInline muted loop>
-                  <source
-                    src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
-            </div>
+            </video>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <section className="faq">
-        <div className="inner-container">
-          <div className="inner-title">
+      <section className="border-bottom-hr py-4 mt-20 text-white">
+        <div>
+          <div className="text-5xl text-center font-bold smler:text-3xl sm:mt-10 smler:mt-10 smler:text-center">
             <h1>Frequently Asked Questions</h1>
           </div>
 
@@ -210,8 +211,8 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <footer>
-        <p>Questions? Contact us.</p>
+      <footer className="footer">
+        <p className="text-footer">Questions? Call <a href="tel:900 822 377" className="phone-link">900 822 377</a></p>
         <div className="links">
           <ul>
             <li>FAQ</li>
@@ -220,27 +221,31 @@ const LandingPage = () => {
             <li>Media Center</li>
             <li>Investor Relations</li>
             <li>Jobs</li>
+            <li>Redeem Gift Cards</li>
+            <li>Buy Gift Cards</li>
             <li>Ways to Watch</li>
             <li>Terms of Use</li>
             <li>Privacy</li>
             <li>Cookie Preferences</li>
-            <li>Corporate Information</li>
+            <li>Corporate information</li>
             <li>Contact Us</li>
             <li>Speed Test</li>
+            <li>Legal Guarantee</li>
             <li>Legal Notices</li>
-            <li>Netflix Originals</li>
+            <li>Only on Netflix</li>
           </ul>
           <div className="language" id="language-btn">
-            <i className="fas fa-globe"></i> English
-            <i className="fas fa-sort-down lg"></i>
+          
+          <BsGlobe className="inline-block" /> English
+          <MdArrowDropDown className="inline-block" />
             <div className="dropdown-list">
               <ul className="" id="language-dropdown">
-                <li>中文</li>
+                <li>Español</li>
                 <li>English</li>
               </ul>
             </div>
           </div>
-          <p>NetFlix Taiwan</p>
+          <p>Netflix Spain</p>
         </div>
       </footer>
 
