@@ -65,66 +65,70 @@ const LandingPage = () => {
     </div>
   </section>
 
-      <section className="border-bottom-hr py-4">
-        <div className="xl:flex 2xl:flex lg:flex md:flex-column items-end justify-between m-auto max-w-6xl text-white mb-40 smler:mb-20">
-          <div className="md:flex-column md:m-auto md:w-4/5 lg:w-4/5">
-            <img
-              src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
-              alt="Mobile Stranger Things"
-              className="sm:m-auto md:m-auto lg:m-auto"
-            />
-            <div className="flex sm:-mt-3 2xl:-mt-40 xl:-mt-40 lg:-mt-40 md:-mt-40 w-3/5 download-text sm:w-2/5 md:w-2/5 smler:w-2/5">
-              <img
-                src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png"
-                alt="Mobile Stranger Things download"
-                className="h-[4.5rem]"
-              />
-              <div className="flex">
-                <div className="flex-column ml-5">
-                  <h1 className="font-bold">Stranger Things</h1>
-                  <div className="text-blue-500">Downloading...</div>
-                </div>
-                <div class="download-icon md:ml-5"></div>
-              </div>
+  <section className="border-bottom-hr py-4">
+    <div className="xl:flex 2xl:flex lg:flex md:flex-column items-end justify-between m-auto max-w-6xl text-white mb-40 smler:mb-20">
+      <div className="md:flex-column md:m-auto md:w-4/5 lg:w-4/5">
+        <img
+          src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
+          alt="Mobile Stranger Things"
+          className="sm:m-auto md:m-auto lg:m-auto"
+        />
+        <div className="flex sm:-mt-3 2xl:-mt-40 xl:-mt-40 lg:-mt-40 md:-mt-40 w-3/5 download-text sm:w-2/5 md:w-2/5 smler:w-2/5">
+          <img
+            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png"
+            alt="Mobile Stranger Things download"
+            className="h-[4.5rem]"
+          />
+          <div className="flex">
+            <div className="flex-column ml-5">
+              <h1 className="font-bold">Stranger Things</h1>
+              <div className="text-blue-500">Downloading...</div>
             </div>
-          </div>
-          <div className="flex-col items-center w-3/6 m-auto lg:text-center xl:text-left 2xl:text-left sm:text-center sm:mt-20 md:text-center md:mt-20 xl:m-auto 2xl:m-auto lg:m-auto smler:text-center 2xl:mt-40 xl:mt-40 lg:mt-40">
-            <div className="text-5xl font-bold smler:text-3xl sm:mt-10 smler:mt-10 smler:text-center">
-              <h1>Download your shows to watch offline.</h1>
-            </div>
-            <div className="text-2xl mt-8 smler:text-xl">
-              <p>
-                Save your favorites easily and always have something to watch.
-              </p>
-            </div>
+            <div class="download-icon md:ml-5"></div>
           </div>
         </div>
-      </section>
+      </div>
+      <div className="flex-col items-center w-3/6 m-auto lg:text-center xl:text-left 2xl:text-left sm:text-center sm:mt-20 md:text-center md:mt-20 xl:m-auto 2xl:m-auto lg:m-auto smler:text-center 2xl:mt-40 xl:mt-40 lg:mt-40">
+        <div className="text-5xl font-bold smler:text-3xl sm:mt-10 smler:mt-10 smler:text-center">
+          <h1>Download your shows to watch offline.</h1>
+        </div>
+        <div className="text-2xl mt-8 smler:text-xl">
+          <p>
+            Save your favorites easily and always have something to watch.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <section className="showcase">
-        <div className="showcase-container case3">
-          <div className="inner-container">
-            <div className="inner-title">
+      <section className="border-bottom-hr py-4 mt-20">
+        <div className="xl:flex 2xl:flex lg:flex md:flex-column items-center justify-center m-auto max-w-6xl text-white smler:mb-20">
+          <div className="inner-container w-1/2 md:w-full sm:text-center sm:w-full sm:mb-10 smler:text-center smler:w-full smler:mb-10">
+            <div className="text-5xl text-center font-bold smler:text-3xl sm:mt-10 smler:mt-10 smler:text-center"> 
               <h1>Watch everywhere.</h1>
             </div>
-            <div className="inner-text">
-              <p>
+            <div className="text-2xl mt-8 smler:text-xl md:mb-20 md:w-1/2">
+              <p className="text-center">
                 Stream unlimited movies and TV shows on your phone, tablet,
                 laptop, and TV without paying more.
               </p>
             </div>
           </div>
-          <div className="showcase-img">
-            <img
-              src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png"
-              alt=""
-            />
-            <video className="showcase-animation" autoPlay playsInline muted loop>
-              <source
-                src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
-                type="video/mp4"
+          <div className="flex w-3/6 box-border md:text-center 2xl:w-3/6 xl:w-3/6 lg:w-3/6 md:w-4/5 sm:w-4/5 2xl:m-auto xl:m-auto lx:m-auto md:m-auto sm:m-auto smler:m-auto md:justify-center sm:justify-center smler:justify-center smler:w-4/5">
+            <div className="container-img-video">
+              <img
+                src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png"
+                alt="Ipad with movies"
               />
-            </video>
+              <div className="container-video-section3">
+                <video autoPlay playsInline muted loop>
+                  <source
+                    src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </div>
           </div>
         </div>
       </section>
