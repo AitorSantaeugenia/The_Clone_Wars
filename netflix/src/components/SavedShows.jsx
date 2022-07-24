@@ -52,7 +52,7 @@ const SavedShows = () => {
           {movies.map((item) => (
             <div
               key={item.id}
-              className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2'
+              className='2xl:w-[280px] xl:w-[280px] lg:w-[280px] md:w-[240px] sm:w-[200px] smler:w-[200px] inline-block cursor-pointer relative p-2 hover:z-40'
             >
               <img
                 className='w-full h-auto block'
