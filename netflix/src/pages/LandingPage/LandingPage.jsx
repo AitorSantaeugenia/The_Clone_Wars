@@ -85,7 +85,7 @@ const LandingPage = () => {
               <h1 className="font-bold">Stranger Things</h1>
               <div className="text-blue-500">Downloading...</div>
             </div>
-            <div class="download-icon md:ml-5"></div>
+            <div className="download-icon md:ml-5"></div>
           </div>
         </div>
       </div>
