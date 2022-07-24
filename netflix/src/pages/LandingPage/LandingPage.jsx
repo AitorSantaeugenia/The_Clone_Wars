@@ -4,6 +4,7 @@ import {BsChevronRight, BsGlobe} from 'react-icons/bs'
 import {MdArrowDropDown} from 'react-icons/md'
 
 const LandingPage = () => {
+
   const buttonAcordeon = () => {
     let accordion = document.getElementsByClassName("accordion");
     const totalAccordions = accordion.length;
