@@ -7,7 +7,6 @@ import Account from "./pages/Account";
 import Signup from "./pages/Signup";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import ProtectedRoute from "./components/ProtectedRoute";
-import LoggedInRoute from "./components/LoggedInRoute";
 import Shows from "./pages/Shows/Shows";
 
 function App() {
@@ -16,14 +15,7 @@ function App() {
       <AuthContextProvider>
         <Navbar />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <LoggedInRoute>
-                <LandingPage />
-              </LoggedInRoute>
-            }
-          />
+          <Route path="/" element={<LandingPage />} />
           <Route
             path="/browse"
             element={
