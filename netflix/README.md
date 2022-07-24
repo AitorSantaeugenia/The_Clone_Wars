@@ -14,3 +14,7 @@
   - existing project > select your proyect
 - yarn run build
 - firebase deploy
+
+# TODO
+- Improve acordion function
+- Navigate to /browse when user is signup, but go to "/" if user it's not (there is a bug, going to /browse and then redirecting)
