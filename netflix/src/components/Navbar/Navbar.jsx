@@ -28,11 +28,19 @@ const Navbar = () => {
 
   return (
     <div className={scroll ? "flex items-center px-4 z-[100] justify-between w-full fixed bg-black": "flex items-center justify-between px-4 z-[100] w-full fixed bg-black bg-opacity-10"}>
+      {user ?
+      <NavLink to="/browse">
+      <nav className="logo">
+        <img src="https://i.ibb.co/r5krrdz/logo.png" alt="Netflix" />
+      </nav>
+      </NavLink>
+      : 
       <NavLink to="/">
       <nav className="logo">
-      <img src="https://i.ibb.co/r5krrdz/logo.png" alt="Netflix" />
-       </nav>
+        <img src="https://i.ibb.co/r5krrdz/logo.png" alt="Netflix" />
+      </nav>
       </NavLink>
+      }
       {user?.email ? (
       <>
       <div className="buttonsNavbar">
