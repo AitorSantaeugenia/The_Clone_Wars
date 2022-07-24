@@ -4,6 +4,29 @@ import {BsChevronRight, BsGlobe} from 'react-icons/bs'
 import {MdArrowDropDown} from 'react-icons/md'
 
 const LandingPage = () => {
+  let accordion = document.getElementsByClassName("accordion");
+  const totalAccordions = accordion.length;
+
+  const buttonAcordeon = () => {
+    for (let i = 0; i < totalAccordions; i++) {
+      accordion[i].addEventListener("click", (e) => {
+        let panel = e.target.nextElementSibling;
+       
+        if (panel.classList[1] === "panel-closed") {
+          e.target.classList.toggle("accordion-active");
+          panel.classList.toggle("panel-open");
+          for (let i = 0; i < totalAccordions; i++) {
+            let panelToClose = accordion[i].nextElementSibling;
+            if(panelToClose !== panel){
+               accordion[i].classList.remove("accordion-active");
+               panelToClose.classList.remove("panel-open");
+            }
+          }
+        }
+      });
+    } 
+  }
+
   return (
    <>
    <div className="text-white flex flex-col text-center">
@@ -134,123 +157,125 @@ const LandingPage = () => {
     </div>
   </section>
 
-      <section className="border-bottom-hr py-4 mt-20 text-white">
-        <div>
-          <div className="text-5xl text-center font-bold smler:text-3xl sm:mt-10 smler:mt-10 smler:text-center">
-            <h1>Frequently Asked Questions</h1>
-          </div>
-
-          <ul>
-            <li>
-              <h2>What is Netflix <i className="fas fa-plus"></i></h2>
-              <p>
-                Netflix is a streaming service that offers a wide variety of
-                award-winning TV shows, movies, anime, documentaries, and more
-                on thousands of internet-connected devices. <br />You can watch
-                as much as you want, whenever you want without a single
-                commercial – all for one low monthly price. There's always
-                something new to discover and new TV shows and movies are added
-                every week!
-              </p>
-            </li>
-            <li>
-              <h2>How much does NetFlix cost? <i className="fas fa-plus"></i></h2>
-              <p>
-                Watch Netflix on your smartphone, tablet, Smart TV, laptop, or
-                streaming device, all for one fixed monthly fee. <br />
-                Plans range from TWD270 to TWD390 a month. No extra costs, no
-                contracts.
-              </p>
-            </li>
-            <li>
-              <h2>Where can I watch?<i className="fas fa-plus"></i></h2>
-              <p>
-                Watch anywhere, anytime, on an unlimited number of devices. Sign
-                in with your Netflix account to watch instantly on the web at
-                netflix.com from your personal computer or on any
-                internet-connected device that offers the Netflix app, including
-                smart TVs, smartphones, tablets, streaming media players and
-                game consoles. <br />You can also download your favorite shows
-                with the iOS, Android, or Windows 10 app. Use downloads to watch
-                while you're on the go and without an internet connection. Take
-                Netflix with you anywhere.
-              </p>
-            </li>
-            <li>
-              <h2>How do I cancel?<i className="fas fa-plus"></i></h2>
-              <p>
-                Netflix is flexible. There are no pesky contracts and no
-                commitments. You can easily cancel your account online in two
-                clicks. There are no cancellation fees – start or stop your
-                account anytime.
-              </p>
-            </li>
-            <li>
-              <h2>What can I watch on Netflix?<i className="fas fa-plus"></i></h2>
-              <p>
-                Netflix has an extensive library of feature films,
-                documentaries, TV shows, anime, award-winning Netflix originals,
-                and more. Watch as much as you want, anytime you want.
-              </p>
-            </li>
-          </ul>
-
-          <div className="email-form">
-            <p>
-              Ready to watch? Enter your email to create or restart your
-              membership.
-            </p>
-
-            <div className="get-started">
-              <input type="text" name="" id="" placeholder="Email address" />
-              <a href="/#" className="btn-lg"
-                >Get started <i className="fas fa-chevron-right"></i
-              ></a>
-            </div>
-          </div>
+  <section className="border-bottom-hr py-4 mt-20 text-white">
+    <div className="qna">
+      <button className="accordion" onClick={buttonAcordeon}>What is Netflix</button>
+        <div className="panel panel-closed">
+          <p> Netflix is a streaming service that offers a wide variety of
+              award-winning TV shows, movies, anime, documentaries, and more
+              on thousands of internet-connected devices. <br /><br />
+              You can watch as much as you want, whenever you want without a single
+              commercial – all for one low monthly price. There's always
+              something new to discover and new TV shows and movies are added
+              every week!
+          </p>
         </div>
-      </section>
-
-      <footer className="footer">
-        <p className="text-footer">Questions? Call <a href="tel:900 822 377" className="phone-link">900 822 377</a></p>
-        <div className="links">
-          <ul>
-            <li>FAQ</li>
-            <li>Help Center</li>
-            <li>Account</li>
-            <li>Media Center</li>
-            <li>Investor Relations</li>
-            <li>Jobs</li>
-            <li>Redeem Gift Cards</li>
-            <li>Buy Gift Cards</li>
-            <li>Ways to Watch</li>
-            <li>Terms of Use</li>
-            <li>Privacy</li>
-            <li>Cookie Preferences</li>
-            <li>Corporate information</li>
-            <li>Contact Us</li>
-            <li>Speed Test</li>
-            <li>Legal Guarantee</li>
-            <li>Legal Notices</li>
-            <li>Only on Netflix</li>
-          </ul>
-          <div className="language" id="language-btn">
-          
-          <BsGlobe className="inline-block" /> English
-          <MdArrowDropDown className="inline-block" />
-            <div className="dropdown-list">
-              <ul className="" id="language-dropdown">
-                <li>Español</li>
-                <li>English</li>
-              </ul>
-            </div>
-          </div>
-          <p>Netflix Spain</p>
+      <button className="accordion" onClick={buttonAcordeon}>How much does Netflix cost?</button>
+      <div className="panel panel-closed">
+        <p>
+        Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, 
+        all for one fixed monthly fee. Plans range from EUR7.99 to EUR17.99 a month.
+        No extra costs, no contracts.
+        </p>
+      </div>
+      <button className="accordion" onClick={buttonAcordeon}>Where can I watch?</button>
+        <div className="panel panel-closed">
+          <p>
+            Watch anywhere, anytime, on an unlimited number of devices. Sign
+            in with your Netflix account to watch instantly on the web at
+            netflix.com from your personal computer or on any
+            internet-connected device that offers the Netflix app, including
+            smart TVs, smartphones, tablets, streaming media players and
+            game consoles. <br /><br />You can also download your favorite shows
+            with the iOS, Android, or Windows 10 app. Use downloads to watch
+            while you're on the go and without an internet connection. Take
+            Netflix with you anywhere.
+          </p>
         </div>
-      </footer>
+      <button className="accordion" onClick={buttonAcordeon}>How do I cancel?</button>
+        <div className="panel panel-closed">
+          <p>
+            Netflix is flexible. There are no pesky contracts and no
+            commitments. You can easily cancel your account online in two
+            clicks. There are no cancellation fees – start or stop your
+            account anytime.
+          </p>
+        </div>
+      <button className="accordion" onClick={buttonAcordeon}>What can I watch on Netflix?</button>
+        <div className="panel panel-closed">
+          <p>
+            Netflix has an extensive library of feature films,
+            documentaries, TV shows, anime, award-winning Netflix originals,
+            and more. Watch as much as you want, anytime you want.
+          </p>
+        </div>
+      <button className="accordion" onClick={buttonAcordeon}>Is Netflix good for kids?</button>
+      <div className="panel panel-closed">
+        <p>
+        The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly
+        TV shows and movies in their own space.<br /><br />
+        Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content 
+        kids can watch and block specific titles you don’t want kids to see.
+        </p>
+      </div>
 
-    <script src="index.js" type="text/javascript"></script>
-   </>
+      <div className="email-form flex-column justify-center text-center text-lg">
+      <p className="mb-4 mt-12">
+        Ready to watch? Enter your email to create or restart your
+        membership.
+      </p>
+
+      <div className="get-started flex justify-center">
+        <input type="text" name="" id="" placeholder="Email address" />
+          <a href="/#" className="btn-lg">Get started <BsChevronRight className="inline-block chevronRigth" />
+          </a>
+      </div>
+    </div>
+  </div>
+
+   
+  </section>
+
+  <footer className="footer">
+    <p className="text-footer">Questions? Call <a href="tel:900 822 377" className="phone-link">900 822 377</a></p>
+    <div className="links">
+      <ul>
+        <li>FAQ</li>
+        <li>Help Center</li>
+        <li>Account</li>
+        <li>Media Center</li>
+        <li>Investor Relations</li>
+        <li>Jobs</li>
+        <li>Redeem Gift Cards</li>
+        <li>Buy Gift Cards</li>
+        <li>Ways to Watch</li>
+        <li>Terms of Use</li>
+        <li>Privacy</li>
+        <li>Cookie Preferences</li>
+        <li>Corporate information</li>
+        <li>Contact Us</li>
+        <li>Speed Test</li>
+        <li>Legal Guarantee</li>
+        <li>Legal Notices</li>
+        <li>Only on Netflix</li>
+      </ul>
+      <div className="language" id="language-btn">
+      
+      <BsGlobe className="inline-block" /> English
+      <MdArrowDropDown className="inline-block" />
+        <div className="dropdown-list">
+          <ul className="" id="language-dropdown">
+            <li>Español</li>
+            <li>English</li>
+          </ul>
+        </div>
+      </div>
+      <p>Netflix Spain</p>
+    </div>
+  </footer>
+
+  <script src="index.js" type="text/javascript"></script>
+  </>
   )
 }
 

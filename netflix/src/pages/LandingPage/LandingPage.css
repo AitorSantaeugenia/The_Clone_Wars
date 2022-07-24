@@ -51,7 +51,7 @@
   }
 
   .chevronRigth{
-  max-height: 22px;
+    max-height: 22px;
     font-weight: bold;
     margin-left: 13px;
   }
@@ -241,6 +241,63 @@
     text-decoration:underline
   }
 
+  /* FAQ section */
+  /* Centers horizontally */
+  .qna{
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  /* Button default resets */
+  button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  /* Styling the accordion buttons */
+  .accordion{
+    width: 100%;
+    background-color: #303030;
+    color: #fff;
+    font-size:26px;
+    font-weight: bold;
+    padding: 18px 20px;
+    margin-bottom: 1px;
+    text-align: left;
+    /*  To push the plus sign to the right  */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* adding the "plus" sign (+) */ 
+  .accordion::after{
+    content: '\02795';
+    font-size: 20px;
+    color: #fff;
+  }
+  .panel{
+    background-color: #303030;
+    color: #fff;
+    margin-bottom: 4px;
+    overflow: hidden;
+    transition: max-height .33s cubic-bezier(.5,0,.1,1);
+  }
+  .panel > p {
+    font-size: 26px;
+    padding: 10px 20px;
+    font-weight: 400;
+  }
+  .panel-closed{
+    max-height: 0;
+    overflow: hidden;
+  }
+  .panel-open{
+    max-height: 700px;
+  }
+  /* active class for accordion, adds the "cross sign (x)" */
+  .accordion-active::after {
+    content: "\274C";
+  }
+
   /* Media queries */
   @media (max-width: 1449px) { 
     .header {
@@ -287,9 +344,25 @@
     }
   }
 
-  @media (max-width: 770px) { 
+  @media (max-width: 949px) { 
+    .accordion{
+      font-size:20px;
+    }
+
+    .panel p{
+      font-size:20px;
+    }
+  }
+  @media (max-width: 786px) { 
+    .chevronRigth {
+        margin-left:0px;
+    }
+  }
+  
+
+  @media (max-width: 772px) { 
     .btn-lg {
-        font-size: 1rem !important;
+      font-size: 20px !important;
     }
   }
 
