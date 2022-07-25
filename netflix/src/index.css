@@ -8,3 +8,7 @@ body {
   background-color: #000000;
   font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.position-object-image{
+  object-position: 25% 25%;
+}
