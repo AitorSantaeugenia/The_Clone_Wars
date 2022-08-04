@@ -29,7 +29,7 @@ const Main = () => {
             <div className="absolute w-full h-[550px] bg-gradient-to-r from-black"></div>
             {/* base url + backdrop_path */}
             <img className="w-full h-full object-cover position-object-image" src={`http://image.tmdb.org/t/p/original/${show?.backdrop_path}`} alt={show?.original_name} />
-            <div className="absolute w-full top-[20%] p-4 md:p-8">
+            <div className="absolute w-full top-[20%] p-4 md:p-8 2xl:px-16 xl:px-16 lg:px-16 md:px-9 sm:px-9 smler:px-2.5">
                 <h1 className="text-3xl md:text-5xl font-bold">{show?.name}</h1>
                 <div className="my-4">
                     <button className="border bg-gray-300 text-black border-gray-300 py-2 px-5">Play</button>
