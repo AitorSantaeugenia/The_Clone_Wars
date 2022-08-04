@@ -1,6 +1,6 @@
 import React from 'react'
-import Main from '../components/Main'
-import Row from '../components/Row'
+import Main from '../components/MovieHeader/MovieHeader'
+import Row from '../components/Row/Row'
 
 import requests from '../Request'
 
