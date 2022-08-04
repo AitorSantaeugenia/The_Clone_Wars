@@ -27,7 +27,7 @@ const Navbar = () => {
 
 
   return (
-    <div className={scroll ? "flex items-center px-4 z-[100] justify-between w-full fixed bg-black": "flex items-center justify-between px-4 z-[100] w-full fixed bg-black bg-opacity-10"}>
+    <div className={scroll ? "flex items-center z-[100] justify-between w-full fixed bg-black px-16 2xl:px-16 xl:px-16 lg:px-16 md:px-9 sm:px-9 smler:px-2.5" : "flex items-center justify-between px-16 z-[100] w-full fixed bg-black bg-opacity-10 2xl:px-16 xl:px-16 lg:px-16 md:px-9 sm:px-9 smler:px-2.5"}>
       {user ?
       <NavLink to="/browse">
       <nav className="logo">
@@ -56,7 +56,7 @@ const Navbar = () => {
         <NavLink to="/recently" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
           <button className="pr-4 hover:text-gray-400">Recently Added</button>
         </NavLink>
-        <NavLink to="/account" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
+        <NavLink to="/browse/my-list" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
           <button className="pr-4 hover:text-gray-400">My list</button>
         </NavLink>
       </div>
