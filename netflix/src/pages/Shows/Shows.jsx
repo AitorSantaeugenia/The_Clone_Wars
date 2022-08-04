@@ -1,6 +1,6 @@
 import React from 'react'
 import TVShows from '../../components/ShowHeader/ShowHeader'
-import Row from '../../components/Row'
+import Row from '../../components/Row/Row'
 
 import requests from '../../Request'
 
