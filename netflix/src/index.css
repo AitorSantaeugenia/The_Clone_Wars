@@ -12,3 +12,15 @@ body {
 .position-object-image{
   object-position: 25% 25%;
 }
+
+/* .fantasy:hover,
+.fantasy:focus{
+  transform: translateX(25%); 
+  transform: scale(1.5);
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+.fantasy{
+  transition: transform 500ms;
+} */
