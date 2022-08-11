@@ -24,10 +24,9 @@ const Navbar = () => {
       setScroll(window.scrollY > 100);
     });
   }, []);
-
-
+ 
   return (
-    <div className={scroll ? "flex items-center z-[100] w-full fixed bg-black px-16 2xl:px-16 xl:px-16 lg:px-16 md:px-9 sm:px-9 smler:px-2.5" : "flex items-center px-16 z-[100] w-full fixed bg-black bg-opacity-10 2xl:px-16 xl:px-16 lg:px-16 md:px-9 sm:px-9 smler:px-2.5"}>
+    <div className={scroll ? user?.email ? "flex items-center z-[100] w-full fixed bg-black 2xl:px-16 xl:px-16 lg:px-16 md:px-9 sm:px-9 smler:px-2.5" : "flex items-center justify-between px-16 z-[100] w-full fixed bg-black 2xl:px-16 xl:px-16 lg:px-16 md:px-9 sm:px-9 smler:px-2.5" : "flex items-center justify-between px-16 z-[100] w-full fixed bg-black bg-opacity-10 2xl:px-16 xl:px-16 lg:px-16 md:px-9 sm:px-9 smler:px-2.5"}>
       {user ?
       <NavLink to="/browse" className="mr-10">
       <nav className="logo">
