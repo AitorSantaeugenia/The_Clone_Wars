@@ -60,7 +60,7 @@ const Movie = ({item}) => {
     //     case 37:
     //       return "Western";  
           //  case 9999:
-          //   return "Testing git version with new ubuntu version that gave problems with git push"a
+          //   return "Last test trying to know why I can't push using CLI but yes with gitkraken or fork"
     //   }
     // }
    
