@@ -60,7 +60,7 @@ const Movie = ({item}) => {
     //     case 37:
     //       return "Western";  
           //  case 9999:
-          //   return "Testing git version with new ubuntu version that gave problems with git push"
+          //   return "Testing git version with new ubuntu version that gave problems with git push"a
     //   }
     // }
    
