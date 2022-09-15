@@ -30,7 +30,7 @@ https://netflix-tcw.web.app/
 
 ## [API](https://developers.themoviedb.org/3/getting-started/introduction) usage
 ~~~
-We are using <b>The Movie Database API</b>, you can find it here:</br>
+We are using The Movie Database API, you can find it here:
 https://developers.themoviedb.org/3/getting-started/introduction
 ~~~
 
