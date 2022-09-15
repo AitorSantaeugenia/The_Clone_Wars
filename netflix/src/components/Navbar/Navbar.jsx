@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { FaAngleDown } from 'react-icons/fa'
 import {UserAuth} from "../../context/AuthContext"
 import "./Navbar.css"
 
@@ -7,7 +8,9 @@ const Navbar = () => {
   const {user, logOut} = UserAuth()
   const navigate = useNavigate()
   const [scroll, setScroll] = useState(false);
-  // console.log(user)
+  const [displayMenu, setDisplayMenu] = useState(false)
+  // We simulate netflix behaviour with the responsive menu, onMouseLeave and onClick to hidde the menu again
+  const [displayMenuBoolean, setDisplayMenuBoolean] = useState(true)
 
   const handleLogout = async () => {
       try{
@@ -18,6 +21,14 @@ const Navbar = () => {
       }     
   }
 
+  const showMenu = () =>{
+    setDisplayMenu(!displayMenu)
+    setDisplayMenuBoolean(true)
+  }
+
+  const hideMenu = () =>{
+    setDisplayMenuBoolean(!displayMenuBoolean)
+  }
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -42,23 +53,47 @@ const Navbar = () => {
       }
       {user?.email ? (
       <>
-      <div className="buttonsNavbar mr-auto">
-        <NavLink to="/browse" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
+      <div className="buttonsNavbar mr-auto navbarMenu">
+        <div onClick={showMenu} className="navbarArrowDown">
+            <button className='active navlink'>Menu</button>
+            <FaAngleDown className="text-[#c2c2c1] active self-center cursor-pointer ml-0.5" />
+        </div>
+          <NavLink to="/browse" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
+            <button className="pr-4 hover:text-gray-400">Home</button>
+          </NavLink>
+          <NavLink to="/shows" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
+            <button className="pr-4 hover:text-gray-400">TV Shows</button>
+          </NavLink>
+          <NavLink to="/movies" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
+            <button className="pr-4 hover:text-gray-400">Movies</button>
+          </NavLink>
+          <NavLink to="/recently" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
+            <button className="pr-4 hover:text-gray-400">Recently Added</button>
+          </NavLink>
+          <NavLink to="/browse/my-list" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
+            <button className="pr-4 hover:text-gray-400">My list</button>
+          </NavLink>
+      </div>
+
+      {/* This replace the menu for a responsive design */}
+      <div className={displayMenu && displayMenuBoolean ? 'buttonsNavbar mr-auto navBarMenuResponsive flex' : 'buttonsNavbar mr-auto navBarMenuResponsive hidden'} onMouseLeave={showMenu}>
+        <NavLink to="/browse" onClick={hideMenu} className={({ isActive }) => (isActive ? 'active hover:bg-[#181818]' : 'inactive hover:bg-[#181818]')}>
           <button className="pr-4 hover:text-gray-400">Home</button>
         </NavLink>
-        <NavLink to="/shows" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
+        <NavLink to="/shows" onClick={hideMenu} className={({ isActive }) => (isActive ? 'active hover:bg-[#181818]' : 'inactive hover:bg-[#181818]')}>
           <button className="pr-4 hover:text-gray-400">TV Shows</button>
         </NavLink>
-        <NavLink to="/movies" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
+        <NavLink to="/movies" onClick={hideMenu} className={({ isActive }) => (isActive ? 'active hover:bg-[#181818]' : 'inactive hover:bg-[#181818]')}>
           <button className="pr-4 hover:text-gray-400">Movies</button>
         </NavLink>
-        <NavLink to="/recently" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
+        <NavLink to="/recently" onClick={hideMenu} className={({ isActive }) => (isActive ? 'active hover:bg-[#181818]' : 'inactive hover:bg-[#181818]')}>
           <button className="pr-4 hover:text-gray-400">Recently Added</button>
         </NavLink>
-        <NavLink to="/browse/my-list" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
+        <NavLink to="/browse/my-list" onClick={hideMenu} className={({ isActive }) => (isActive ? 'active hover:bg-[#181818]' : 'inactive hover:bg-[#181818]')}>
           <button className="pr-4 hover:text-gray-400">My list</button>
         </NavLink>
       </div>
+
       <div className="buttonsNavbar">
           <button onClick={handleLogout} className="bg-red-600 px-6 py-2 rounded cursor-pointer text-white">Logout</button>
       </div>
