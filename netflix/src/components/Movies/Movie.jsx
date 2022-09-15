@@ -95,35 +95,37 @@ const Movie = ({item}) => {
     <>
     {/* Some movies or tvshows have no image (backdrop_path) that's why we do this ternary */}
     {item?.backdrop_path ? 
-    <div className="2xl:w-[280px] xl:w-[280px] lg:w-[280px] md:w-[240px] sm:w-[200px] smler:w-[200px] inline-block relative p-2 hover:z-40 fantasy redcolorborder" onClick={showMovieDiv} >
-      <img className="w-full h-auto block" src={`http://image.tmdb.org/t/p/w500${item?.backdrop_path}`} alt={item?.title ? item?.title : item?.name} />
-        <div className="absolute top-0 left-0 w-full h-full text-white ">
-            <p className="white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-[70%] text-center">{item?.title ? item?.title : item?.name}</p>
-            {/* <p onClick={saveShow}>
-                { like ? <FaRegHeart className="absolute top-4 left-4 text-gray-300" /> :  <FaHeart className="absolute top-4 left-4 text-gray-300" />}
-            </p> */}
-        </div>
-        <div className={showDiv ? "testHover" : "testHover hidden"}>
-          <div className="flex justify-between items-center">
-            <div className="flex justify-space-around items-center mb-2.5">
-              <div className="movieButtonPlay flex justify-center items-center mr-2.5 cursor-pointer">
-                <FaPlay className="text-[#181818]"/>
-              </div>
-              <div className="movieButtons flex justify-center items-center mr-2.5 cursor-pointer">
-                <FaThumbsUp />
-              </div>
-              <div className="movieButtons flex justify-center items-center mr-2.5 cursor-pointer" onClick={saveShow}>
-                { like ? <FaPlus className=""/> :  <FaCheck />}
-              </div>
+    <div className="2xl:w-[280px] xl:w-[280px] lg:w-[280px] md:w-[240px] sm:w-[200px] smler:w-[200px] inline-block relative p-2 fantasy" onMouseOver={showMovieDiv} onMouseLeave={hiddeMovieDiv}>
+      <div>
+        <img className="w-full h-auto block" src={`http://image.tmdb.org/t/p/w500${item?.backdrop_path}`} alt={item?.title ? item?.title : item?.name} />
+      </div>
+      <div className="absolute top-0 left-0 w-full h-full text-white ">
+          <p className={`white-space-normal text-xs md:text-sm font-bold flex justify-center items-center ${showDiv ? "h-[50%]": "h-[100%]"}  text-center`}>{item?.title ? item?.title : item?.name}</p>
+          {/* <p onClick={saveShow}>
+              { like ? <FaRegHeart className="absolute top-4 left-4 text-gray-300" /> :  <FaHeart className="absolute top-4 left-4 text-gray-300" />}
+          </p> */}
+      </div>
+      <div className={showDiv ? "testHover block" : "testHover hidden"}>
+        <div className="flex justify-between items-center">
+          <div className="flex justify-space-around items-center mb-2.5">
+            <div className="movieButtonPlay flex justify-center items-center mr-2.5 cursor-pointer">
+              <FaPlay className="text-[#181818]"/>
             </div>
-            
-            <div className="movieButtons flex justify-center items-center mb-2.5 cursor-pointer">
-              <FaChevronDown />
+            <div className="movieButtons flex justify-center items-center mr-2.5 cursor-pointer">
+              <FaThumbsUp />
+            </div>
+            <div className="movieButtons flex justify-center items-center mr-2.5 cursor-pointer" onClick={saveShow}>
+              { like ? <FaPlus className=""/> :  <FaCheck />}
             </div>
           </div>
-          <div className="mb-2.5">Release date: {item?.release_date}</div>
-          <div>{item?.genre_ids[0] }</div>
+          
+          <div className="movieButtons flex justify-center items-center mb-2.5 cursor-pointer">
+            <FaChevronDown />
+          </div>
         </div>
+        <div className="mb-2.5">Release date: {item?.release_date}</div>
+        <div>{item?.genre_ids[0] }</div>
+      </div>
   </div>
   : null}
   </>
