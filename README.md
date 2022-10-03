@@ -10,7 +10,7 @@
 
   ```javascript
    // Since it's build in React, and I wanted to
-   // improve my react skills, nothing was better.
+   // sharp my react skills with tailwind... (not components)
    // Also I found a decent API https://developers.themoviedb.org/3/getting-started/introduction
    // with the newest movies, so I thought it could be a great idea to try it
   ```  
