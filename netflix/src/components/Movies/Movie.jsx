@@ -100,12 +100,12 @@ const Movie = ({item}) => {
         <img className="w-full h-auto block" src={`http://image.tmdb.org/t/p/w500${item?.backdrop_path}`} alt={item?.title ? item?.title : item?.name} />
       </div>
       <div className="absolute top-0 left-0 w-full h-full text-white ">
-          <p className={`white-space-normal text-xs md:text-sm font-bold flex justify-center items-center ${showDiv ? "h-[50%]": "h-[100%]"}  text-center`}>{item?.title ? item?.title : item?.name}</p>
+          <p className={`white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-[100%] text-center`}>{item?.title ? item?.title : item?.name}</p>
           {/* <p onClick={saveShow}>
               { like ? <FaRegHeart className="absolute top-4 left-4 text-gray-300" /> :  <FaHeart className="absolute top-4 left-4 text-gray-300" />}
           </p> */}
       </div>
-      <div className={showDiv ? "testHover block" : "testHover hidden"}>
+      {/* <div className={showDiv ? "testHover block" : "testHover hidden"}>
         <div className="flex justify-between items-center">
           <div className="flex justify-space-around items-center mb-2.5">
             <div className="movieButtonPlay flex justify-center items-center mr-2.5 cursor-pointer">
@@ -125,7 +125,7 @@ const Movie = ({item}) => {
         </div>
         <div className="mb-2.5">Release date: {item?.release_date}</div>
         <div>{item?.genre_ids[0] }</div>
-      </div>
+      </div> */}
   </div>
   : null}
   </>
