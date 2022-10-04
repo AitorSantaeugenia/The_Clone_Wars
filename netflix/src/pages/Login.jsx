@@ -26,7 +26,7 @@ const Login = () => {
   return (
     <>
     <div className="w-full h-screen">
-      <img className="hidden sm:block absolute w-full h-full object-cover" src="https://assets.nflxext.com/ffe/siteui/vlv3/1ef84595-1fdb-4404-adac-15215ceeb3ae/23df31f8-deed-416a-8958-a2aab3b3da48/ES-es-20220711-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="Background Netflix" />
+      <img className="sm:block absolute w-full h-full object-cover" src="https://assets.nflxext.com/ffe/siteui/vlv3/1ef84595-1fdb-4404-adac-15215ceeb3ae/23df31f8-deed-416a-8958-a2aab3b3da48/ES-es-20220711-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="Background Netflix" />
 
       <div className="bg-black/60 fixed top-0 left-0 w-full h-screen"></div>
 
