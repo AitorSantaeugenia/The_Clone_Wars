@@ -14,6 +14,7 @@
   transition: transform 500ms;
   overflow-x: hidden;
   overflow-y: hidden;
+  vertical-align: middle;
   
 }
 
