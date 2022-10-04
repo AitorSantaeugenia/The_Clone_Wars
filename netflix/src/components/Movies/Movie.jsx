@@ -99,7 +99,7 @@ const Movie = ({item}) => {
       <div>
         <img className="w-full h-auto block" src={`http://image.tmdb.org/t/p/w500${item?.backdrop_path}`} alt={item?.title ? item?.title : item?.name} />
       </div>
-      <div className="absolute top-0 left-0 w-full h-full text-white ">
+      <div className="absolute top-0 left-0 w-full h-full text-white hover:opacity-100 hover:bg-black/80">
           <p className={`white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-[100%] text-center`}>{item?.title ? item?.title : item?.name}</p>
           {/* <p onClick={saveShow}>
               { like ? <FaRegHeart className="absolute top-4 left-4 text-gray-300" /> :  <FaHeart className="absolute top-4 left-4 text-gray-300" />}
