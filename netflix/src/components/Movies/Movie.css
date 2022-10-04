@@ -1,5 +1,5 @@
 
-.fantasy:hover,
+/* .fantasy:hover,
 .fantasy:focus{
   transform: translateX(0px) translateY(0px) scaleX(1.1) scaleY(1.1) translateZ(0px);
   z-index: 3;
@@ -16,7 +16,7 @@
   overflow-y: hidden;
   vertical-align: middle;
   
-}
+} */
 
 .testHover{
   color:white;
