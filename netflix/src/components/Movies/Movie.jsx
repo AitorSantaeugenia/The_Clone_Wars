@@ -121,6 +121,7 @@ const Movie = ({item}) => {
     const hidePopOver = () => {
       setPopover(false)
       setShowPopover(false)
+      setAnchorEl(null);
     }
 
   return (
@@ -128,7 +129,7 @@ const Movie = ({item}) => {
     {/* Some movies or tvshows have no image (backdrop_path) that's why we do this ternary */}
     {item?.backdrop_path ? 
     <>
-    <div className="2xl:w-[280px] xl:w-[280px] lg:w-[280px] md:w-[240px] sm:w-[200px] smler:w-[200px] inline-block relative p-2 fantasy" onMouseOver={showPopoverDiv}>
+    <div className="2xl:w-[280px] xl:w-[280px] lg:w-[280px] md:w-[240px] sm:w-[200px] smler:w-[200px] inline-block relative p-2 fantasy" onMouseOver={showMovieModal} ref={divRef}>
       <div>
         <img className="w-full h-auto block" src={`http://image.tmdb.org/t/p/w500${item?.backdrop_path}`} alt={item?.title ? item?.title : item?.name} />
       </div>
