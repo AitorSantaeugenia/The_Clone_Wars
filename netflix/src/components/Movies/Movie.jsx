@@ -1,20 +1,23 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { FaPlay, FaThumbsUp, FaPlus, FaChevronDown, FaCheck } from 'react-icons/fa'
 import { IoCloseSharp } from 'react-icons/io5'
 import {UserAuth} from '../../context/AuthContext'
 import {db} from '../../firebase'
 import {arrayUnion, doc, updateDoc} from 'firebase/firestore'
+import axios from 'axios'
+import Genres from '../Genres/Genres'
 import "./Movie.css"
 // import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Popover from '@mui/material/Popover';
-import { Component } from 'react'
+
 
 const Movie = ({item}) => {
     const [like, setLike] = useState([false])
     // eslint-disable-next-line
     const [saved, setSaved] = useState(false)
     //Modal
+    // eslint-disable-next-line
     const [showDiv, setShowDiv] = useState(false)
     const {user} = UserAuth()
     let title = ""
@@ -22,9 +25,17 @@ const Movie = ({item}) => {
     //Popover
     const divRef = useRef(null);
     const [anchorEl, setAnchorEl] = useState(null)
+    // eslint-disable-next-line
     const [showPopover, setShowPopover] = useState(false)
     const [openPopover, setPopover] = useState(false)
 
+    const truncateString = (str, num) => {
+      if(str?.length > num) {
+          return str.slice(0,num) + "..."
+      }else{
+          return str;
+      }
+  }
 
     if(item?.title){
       title = item?.title;
@@ -32,55 +43,8 @@ const Movie = ({item}) => {
       title = item?.name;
     }
 
-    // for(let i=0; i>item?.genre_ids.legnth;i++){
-    //   switch (item?.genre_ids[i]) {
-    //     case 28:
-    //       item.genre_ids[i] = "Action";
-    //     case 12:
-    //       return "Adventure";
-    //     case 16:
-    //       return "Animation";
-    //     case 35:
-    //       return "Comedy";
-    //     case 80:
-    //       return "Crime";
-    //     case 99:
-    //       return "Documentary";
-    //     case 18:
-    //       return "Drama";
-    //     case 10751:
-    //       return "Family";
-    //     case 14:
-    //       return "Fantasy";
-    //     case 36:
-    //       return "History";
-    //     case 27:
-    //       return "Horror";
-    //     case 10402:
-    //       return "Music";
-    //     case 9648:
-    //       return "Mystery";
-    //     case 10749:
-    //       return "Romance";
-    //     case 878:
-    //       return "Science Fiction";
-    //     case 10770:
-    //       return "TV Movie";
-    //     case 53:
-    //       item.genre_ids[i] = "Thriller";       
-    //     case 10752:
-    //       return "War";       
-    //     case 37:
-    //       return "Western";  
-          //  case 9999:
-          //   return "Last test trying to know why I can't push using CLI but yes with gitkraken or fork test"
-    //   }
-    // }
-   
-
     const movieID = doc(db, 'users', `${user?.email}`)
     const saveShow = async () => {
-      console.log("menta");
       if(user?.email){
         setLike(!like)
         setSaved(true)
@@ -96,26 +60,26 @@ const Movie = ({item}) => {
       }
     }
 
+    // MODAL
     const showMovieModal = () => {
       setShowDiv(true);
       setOpen(true)
-      // console.log(item)
+
+      setPopover(false)
+      setShowPopover(false)
+      setAnchorEl(null);
     }
 
+    const hideMovieDiv = () => {
+      setShowDiv(false)
+      setOpen(false)
+    }
+
+    //POPOVER MODAL
     const showPopoverDiv = () => {
       setPopover(true);
       setShowPopover(true)
       setAnchorEl(divRef.current)
-      console.log(anchorEl)
-      console.log(divRef.current)
-      
-      // console.log(item)
-    }
-
-    const hiddeMovieDiv = () => {
-      setShowDiv(false)
-      setOpen(false)
-      console.log("now shutdown mofo")
     }
 
     const hidePopOver = () => {
@@ -129,50 +93,27 @@ const Movie = ({item}) => {
     {/* Some movies or tvshows have no image (backdrop_path) that's why we do this ternary */}
     {item?.backdrop_path ? 
     <>
-    <div className="2xl:w-[280px] xl:w-[280px] lg:w-[280px] md:w-[240px] sm:w-[200px] smler:w-[200px] inline-block relative p-2 fantasy" onMouseOver={showMovieModal} ref={divRef}>
+    <div className="2xl:w-[280px] xl:w-[280px] lg:w-[280px] md:w-[240px] sm:w-[200px] smler:w-[200px] inline-block relative p-2" onMouseOver={showPopoverDiv} ref={divRef}>
       <div>
         <img className="w-full h-auto block" src={`http://image.tmdb.org/t/p/w500${item?.backdrop_path}`} alt={item?.title ? item?.title : item?.name} />
       </div>
-      <div className="absolute top-0 left-0 w-full h-full text-white hover:opacity-100 hover:bg-black/80 cursor-pointer">
-          <p className={`white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-[100%] text-center`}>{item?.title ? item?.title : item?.name}</p>
+      <div className="absolute top-0 left-0 w-full h-full text-white hover:opacity-100 bg-black/30 cursor-pointer">
+          <p className={`white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-[100%] text-center`}>{item?.title ? truncateString(item?.title, 30) : truncateString(item?.name, 30)}</p>
           {/* <p onClick={saveShow}>
               { like ? <FaRegHeart className="absolute top-4 left-4 text-gray-300" /> :  <FaHeart className="absolute top-4 left-4 text-gray-300" />}
           </p> */}
       </div>
-
-      
-      {/* <div className={showDiv ? "testHover block" : "testHover hidden"}>
-        <div className="flex justify-between items-center">
-          <div className="flex justify-space-around items-center mb-2.5">
-            <div className="movieButtonPlay flex justify-center items-center mr-2.5 cursor-pointer">
-              <FaPlay className="text-[#181818]"/>
-            </div>
-            <div className="movieButtons flex justify-center items-center mr-2.5 cursor-pointer">
-              <FaThumbsUp />
-            </div>
-            <div className="movieButtons flex justify-center items-center mr-2.5 cursor-pointer" onClick={saveShow}>
-              { like ? <FaPlus className=""/> :  <FaCheck />}
-            </div>
-          </div>
-          
-          <div className="movieButtons flex justify-center items-center mb-2.5 cursor-pointer">
-            <FaChevronDown />
-          </div>
-        </div>
-        <div className="mb-2.5">Release date: {item?.release_date}</div>
-        <div>{item?.genre_ids[0] }</div>
-      </div> */}
   </div>
   <Modal
         open={open}
-        onClose={hiddeMovieDiv}
+        onClose={hideMovieDiv}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
         className="flex justify-center m-auto items-center"
       >
         <div className="max-w-[50%] min-w-[50%] flex flex-col justify-center">
           <div className="cursor-pointer absolute max-w-[50%] min-w-[50%] flex justify-end top-[125px] ">
-            <IoCloseSharp className="text-4xl mr-2.5 text-[#fff] bg-[#181818] rounded-[50%] p-1.5 hover:border-2 hover:border-white" onClick={hiddeMovieDiv} />
+            <IoCloseSharp className="text-4xl mr-2.5 text-[#fff] bg-[#000] rounded-[50%] p-1.5 hover:border-2 hover:border-white" onClick={hideMovieDiv} />
           </div>
           <div className="max-w-[100%] min-w-[100%]">
             <img className="w-full block" src={`http://image.tmdb.org/t/p/w500${item?.backdrop_path}`} alt={item?.title ? item?.title : item?.name} />
@@ -189,10 +130,13 @@ const Movie = ({item}) => {
                 <FaThumbsUp />
             </div>
           </div>
-          <div className="bg-[#141414] px-12 py-4">
+          <div className="bg-[#000] px-12 py-4 text-white">
+            <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200 mb-4">{item?.title ? item?.title : item?.name}</p>
             <p className="text-gray-400 text-sm pb-4">Released: {item?.release_date}</p>
-            <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200">{item?.overview}</p>
+            <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200 mb-4">{item?.overview}</p>
+            <Genres genre={item}/>
           </div>
+          
         </div>
       </Modal>
 
@@ -208,9 +152,35 @@ const Movie = ({item}) => {
           horizontal: 'center',
         }}
       >
-        <div className="popOver">
-        dfasdfasfdfasdfsadfsdf
+      <div className="popOver block" onMouseLeave={hidePopOver}>
+        <div className="flex flex-col">
+          <div className="w-full h-auto">
+            <span className="top-20 w-full min-h-[50px] h-auto flex justify-center items-center text-3xl absolute text-center bg-black/40 text-white">{item?.title ? truncateString(item?.title, 30) : truncateString(item?.name, 30)}</span>
+            <img src={`http://image.tmdb.org/t/p/w500${item?.backdrop_path}`} alt={item?.title ? item?.title : item?.name} />
+          </div>
+          <div className="flex justify-between p-5">
+            <div className="flex">
+              <div className="movieButtonPlay flex justify-center items-center mr-2.5 cursor-pointer">
+                <FaPlay className="text-[#181818]"/>
+              </div>
+              <div className="movieButtons flex justify-center items-center mr-2.5 cursor-pointer">
+                <FaThumbsUp />
+              </div>
+              <div className="movieButtons flex justify-center items-center mr-2.5 cursor-pointer" onClick={saveShow}>
+                { like ? <FaPlus className=""/> :  <FaCheck />}
+              </div>
+            </div>
+            <div className="movieButtons flex justify-center items-center cursor-pointer" onClick={showMovieModal}>
+            <FaChevronDown/>
+            </div>
+          </div>
         </div>
+        <div className="pl-5 text-white">
+          <div className="mb-2.5">Release date: {item?.release_date}</div>
+          <Genres genre={item}/>
+        
+        </div>
+      </div>
       </Popover>
   </>
   : null}
