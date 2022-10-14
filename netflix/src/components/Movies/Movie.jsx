@@ -1,10 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { FaPlay, FaThumbsUp, FaPlus, FaChevronDown, FaCheck } from 'react-icons/fa'
 import { IoCloseSharp } from 'react-icons/io5'
 import {UserAuth} from '../../context/AuthContext'
 import {db} from '../../firebase'
 import {arrayUnion, doc, updateDoc} from 'firebase/firestore'
-import axios from 'axios'
 import Genres from '../Genres/Genres'
 import "./Movie.css"
 // import Button from '@mui/material/Button';
@@ -80,6 +79,7 @@ const Movie = ({item}) => {
       setPopover(true);
       setShowPopover(true)
       setAnchorEl(divRef.current)
+
     }
 
     const hidePopOver = () => {
@@ -87,7 +87,7 @@ const Movie = ({item}) => {
       setShowPopover(false)
       setAnchorEl(null);
     }
-
+    console.log(anchorEl)
   return (
     <>
     {/* Some movies or tvshows have no image (backdrop_path) that's why we do this ternary */}
@@ -151,6 +151,7 @@ const Movie = ({item}) => {
           vertical: 'center',
           horizontal: 'center',
         }}
+        className="ml-[-60px]"
       >
       <div className="popOver block" onMouseLeave={hidePopOver}>
         <div className="flex flex-col">
