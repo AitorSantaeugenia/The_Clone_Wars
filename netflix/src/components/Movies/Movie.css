@@ -17,19 +17,6 @@
   vertical-align: middle;
   
 } */
-
-.testHover{
-  color:white;
-  z-index: 3;
-  opacity: 1;
-  padding:25px 15px 25px 15px;
-  
-}
-
-.redcolorborder{
-  border:1px solid red;
-}
-
 .movieButtonPlay{
   border-radius: 20px;
   max-height: 62px;
@@ -68,7 +55,9 @@
 }
 
 .popOver{
-  min-width: 400px;
-  min-height:400px;
-  background-color:#181818;
+  max-width: 361px;
+  max-height:370px;
+  min-height:370px;
+  background-color:black;
+  overflow: hidden;
 }
