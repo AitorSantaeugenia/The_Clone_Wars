@@ -6,6 +6,7 @@ import requests from '../../Request'
 
 const RPlayer = ({movieItem}) => {
   const[movie, setMovie] = useState([])
+  const[finished, setFinished] = useState(false)
   let trailer = ""
 
   useEffect(() =>{
@@ -28,9 +29,13 @@ const RPlayer = ({movieItem}) => {
     trailer = found.key;
   }
 
+  const handleEndingTrailer = () => {
+    setFinished(true)
+  }
+
   return (
     <>
-    {trailer ?  
+    {trailer && !finished ?  
       <ReactPlayer
         url={`${requests.YOUTUBE_URL}${trailer}`}
         config={{
@@ -52,7 +57,10 @@ const RPlayer = ({movieItem}) => {
         playing={true}
         volume={1}
         width="50vw"
-        height="50vh"              
+        height="50vh"
+        onEnded={handleEndingTrailer}
+        onError={handleEndingTrailer}
+        onBuffer={() => console.log("buffering")}
       />
     : 
       <img className="w-full block" src={`http://image.tmdb.org/t/p/w500${movieItem?.backdrop_path}`} alt={movieItem?.title ? movieItem?.title : movieItem?.name} />}
