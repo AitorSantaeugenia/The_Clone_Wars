@@ -1,0 +1,26 @@
+.videoMoviePlayer{
+    max-width: 100% !important;
+    max-height: 97vh !important;
+    min-width: 100% !important;
+    min-height: 97vh !important;
+}
+
+.videoMoviePlayer video{
+    max-width: 100% !important;
+    max-height: 97vh !important; 
+    min-width: 100% !important;
+    min-height: 97vh !important;
+}
+
+.arrowLeftMoviePlayer{
+    font-size: 50px;
+    color: #fffcfc;
+    margin-left: 30px;
+    
+}
+
+.arrowLeftMpDiv{
+
+    cursor:pointer;
+    z-index: 100;
+}
