@@ -1,4 +1,3 @@
-// const key = REACT_APP_IMDB_API_KEY;
 const key = process.env.REACT_APP_IMDB_API_KEY;
 
 const requests = {
@@ -11,6 +10,7 @@ const requests = {
   requestPopularTV: `https://api.themoviedb.org/3/tv/popular?api_key=${key}&language=en-US&page=1`,
   requestTopRatedTV: `https://api.themoviedb.org/3/tv/top_rated?api_key=${key}&language=en-US&page=1`,
   requestLatestTV: `https://api.themoviedb.org/3/tv/on_the_air?api_key=${key}&language=en-US&page=1`,
+  YOUTUBE_URL: "https://www.youtube.com/watch?v=",
 };
 
 export default requests;
