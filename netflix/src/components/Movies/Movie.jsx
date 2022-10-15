@@ -5,9 +5,11 @@ import {UserAuth} from '../../context/AuthContext'
 import {db} from '../../firebase'
 import {arrayUnion, doc, updateDoc} from 'firebase/firestore'
 import Genres from '../Genres/Genres'
+import RPlayer from '../Player/Player'
 import "./Movie.css";
 import Modal from '@mui/material/Modal';
 import Popover from '@mui/material/Popover';
+
 
 
 const Movie = ({item}) => {
@@ -33,7 +35,7 @@ const Movie = ({item}) => {
       }else{
           return str;
       }
-  }
+    }
 
     if(item?.title){
       title = item?.title;
@@ -86,7 +88,7 @@ const Movie = ({item}) => {
       setShowPopover(false)
       setAnchorEl(null);
     }
-    console.log(anchorEl)
+
   return (
     <>
     {/* Some movies or tvshows have no image (backdrop_path) that's why we do this ternary */}
@@ -126,7 +128,7 @@ const Movie = ({item}) => {
                     <FaThumbsUp />
                 </div>
               </div>
-              <img className="w-full block" src={`http://image.tmdb.org/t/p/w500${item?.backdrop_path}`} alt={item?.title ? item?.title : item?.name} />
+              {open ?  <RPlayer movieItem={item}/> : null}
             </div>
           <div className="bg-[#000] px-12 py-4 text-white">
             <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200 mb-4">{item?.title ? item?.title : item?.name}</p>
