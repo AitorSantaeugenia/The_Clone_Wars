@@ -5,8 +5,7 @@ import {UserAuth} from '../../context/AuthContext'
 import {db} from '../../firebase'
 import {arrayUnion, doc, updateDoc} from 'firebase/firestore'
 import Genres from '../Genres/Genres'
-import "./Movie.css"
-// import Button from '@mui/material/Button';
+import "./Movie.css";
 import Modal from '@mui/material/Modal';
 import Popover from '@mui/material/Popover';
 
@@ -112,24 +111,23 @@ const Movie = ({item}) => {
         className="flex justify-center m-auto items-center"
       >
         <div className="max-w-[50%] min-w-[50%] flex flex-col justify-center">
-          <div className="cursor-pointer absolute max-w-[50%] min-w-[50%] flex justify-end top-[125px] ">
-            <IoCloseSharp className="text-4xl mr-2.5 text-[#fff] bg-[#000] rounded-[50%] p-1.5 hover:border-2 hover:border-white" onClick={hideMovieDiv} />
-          </div>
-          <div className="max-w-[100%] min-w-[100%]">
-            <img className="w-full block" src={`http://image.tmdb.org/t/p/w500${item?.backdrop_path}`} alt={item?.title ? item?.title : item?.name} />
-          </div>
-
-          <div className="flex absolute px-12 py-4 mt-36">
-            <div className="flex justify-center items-center mr-2.5 cursor-pointer">
-              <button className="border bg-slate-100 text-black border-gray-300 hover:bg-gray-300 py-2 px-5 font-bold flex items-center min-w-[110px]"><FaPlay className="mr-3 "/>Play</button>
+            <div className="max-w-[100%] min-w-[100%] relative">
+              <div className="cursor-pointer max-w-[100%] min-w-[100%] flex justify-end absolute top-[15px]">
+                <IoCloseSharp className="text-4xl mr-2.5 text-[#fff] bg-[#000] rounded-[50%] p-1.5 hover:border-2 hover:border-white" onClick={hideMovieDiv} />
+              </div>
+              <div className="flex absolute px-12 py-4 top-[70%]">
+                <div className="flex justify-center items-center mr-2.5 cursor-pointer">
+                  <button className="border bg-slate-100 text-black border-gray-300 hover:bg-gray-300 py-2 px-5 font-bold flex items-center min-w-[110px]"><FaPlay className="mr-3 "/>Play</button>
+                </div>
+                <div className="movieButtons flex justify-center items-center mr-2.5 cursor-pointer" onClick={saveShow}>
+                  { like ? <FaPlus className=""/> :  <FaCheck />}
+                </div>
+                <div className="movieButtons flex justify-center items-center mr-2.5 cursor-pointer">
+                    <FaThumbsUp />
+                </div>
+              </div>
+              <img className="w-full block" src={`http://image.tmdb.org/t/p/w500${item?.backdrop_path}`} alt={item?.title ? item?.title : item?.name} />
             </div>
-            <div className="movieButtons flex justify-center items-center mr-2.5 cursor-pointer" onClick={saveShow}>
-              { like ? <FaPlus className=""/> :  <FaCheck />}
-            </div>
-            <div className="movieButtons flex justify-center items-center mr-2.5 cursor-pointer">
-                <FaThumbsUp />
-            </div>
-          </div>
           <div className="bg-[#000] px-12 py-4 text-white">
             <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200 mb-4">{item?.title ? item?.title : item?.name}</p>
             <p className="text-gray-400 text-sm pb-4">Released: {item?.release_date}</p>
