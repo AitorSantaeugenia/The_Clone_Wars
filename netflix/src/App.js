@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import { AuthContextProvider } from "./context/AuthContext";
 import Home from "./pages/Home";
+import Play from "./pages/Play/Play";
 import Login from "./pages/Login";
 import List from "./pages/List";
 import Signup from "./pages/Signup";
@@ -37,6 +38,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Shows />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/play"
+            element={
+              <ProtectedRoute>
+                <Play />
               </ProtectedRoute>
             }
           />
