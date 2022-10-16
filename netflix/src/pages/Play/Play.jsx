@@ -17,11 +17,12 @@ const Play = () => {
   const showControls = () =>{
     setTimeout(() => {
       setShow(false);
-    }, 3000);
+    }, 2500);
   }
 
   const showControlsOnLeave = () =>{
     setMouseIn(!mousein);
+    setShow(true)
   }
 
   const showAgain = () =>{
