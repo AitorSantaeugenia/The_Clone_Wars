@@ -28,6 +28,7 @@ const Movie = ({item, type}) => {
     const [showPopover, setShowPopover] = useState(false)
     const [openPopover, setPopover] = useState(false)
     let navigate = useNavigate();
+    let handle = null;
 
     const truncateString = (str, num) => {
       if(str?.length > num) {
@@ -77,10 +78,18 @@ const Movie = ({item, type}) => {
 
     //POPOVER MODAL
     const showPopoverDiv = () => {
-      setPopover(true);
-      setShowPopover(true)
-      setAnchorEl(divRef.current)
+      handle = setTimeout(() => {
+        setPopover(true);
+        setShowPopover(true)
+        setAnchorEl(divRef.current)
+    }, 1000);
+    }
 
+    const cancelPopOverDiv = () => {
+      if (handle) {
+        clearTimeout(handle);
+        handle = undefined;
+      }
     }
 
     const hidePopOver = () => {
@@ -99,7 +108,7 @@ const Movie = ({item, type}) => {
     {/* Some movies or tvshows have no image (backdrop_path) that's why we do this ternary */}
     {item?.backdrop_path ? 
     <>
-    <div className="2xl:w-[280px] xl:w-[280px] lg:w-[280px] md:w-[240px] sm:w-[200px] smler:w-[200px] inline-block relative p-2" onMouseOver={showPopoverDiv} ref={divRef}>
+    <div className="2xl:w-[280px] xl:w-[280px] lg:w-[280px] md:w-[240px] sm:w-[200px] smler:w-[200px] inline-block relative p-2" onMouseOver={showPopoverDiv} ref={divRef} onMouseLeave={cancelPopOverDiv}>
       <div>
         <img className="w-full h-auto block" src={`http://image.tmdb.org/t/p/w500${item?.backdrop_path}`} alt={item?.title ? item?.title : item?.name} />
       </div>
