@@ -17,7 +17,7 @@ const Genres = ({genre, type}) => {
         setGenres(response.data.genres)
        })
     }
-  },[genre.id])
+  },[genre.id, type])
 
   return (
     <div className="flex flex-wrap">
