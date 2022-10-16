@@ -42,7 +42,6 @@ const RPlayer = ({movieItem, type}) => {
       trailer = found.key;
     }
   }
-  
 
   const handleEndingTrailer = () => {
     setFinished(true)
@@ -59,12 +58,19 @@ const RPlayer = ({movieItem, type}) => {
               controls: 0,
               autoplay: 1,
               modestbranding: 1,
-              iv_load_policy: 3 },
+              iv_load_policy: 3,
+              showinfo: 0,
+              fs:0,
+              cc_load_policy: 0
+            },
           embedOptions: {
-            controls: 0,
-            autoplay: 1,
-            modestbranding: 1,
-            iv_load_policy: 3,
+           controls: 0,
+              autoplay: 1,
+              modestbranding: 1,
+              iv_load_policy: 3,
+              showinfo: 0,
+              fs:0,
+              cc_load_policy: 0
           },
           }
           
