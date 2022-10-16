@@ -23,7 +23,7 @@ const RPlayer = ({movieItem, type}) => {
         setMovie(response.data.results)
       })
     }
-  },[movieItem.id])
+  },[movieItem.id, type])
 
   if(type === "movie"){
     found = movie.find(element => element.name === "Official Trailer")
