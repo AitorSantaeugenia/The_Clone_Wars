@@ -1,18 +1,17 @@
 import React, { useState, useRef } from 'react'
-import { FaPlay, FaThumbsUp, FaPlus, FaChevronDown, FaCheck } from 'react-icons/fa'
+import { useNavigate } from "react-router-dom";
+import "./Movie.css";
+import Modal from '@mui/material/Modal';
+import Popover from '@mui/material/Popover';
 import { IoCloseSharp } from 'react-icons/io5'
+import { FaPlay, FaThumbsUp, FaPlus, FaChevronDown, FaCheck } from 'react-icons/fa'
 import {UserAuth} from '../../context/AuthContext'
 import {db} from '../../firebase'
 import {arrayUnion, doc, updateDoc} from 'firebase/firestore'
 import Genres from '../Genres/Genres'
 import RPlayer from '../Player/Player'
-import "./Movie.css";
-import Modal from '@mui/material/Modal';
-import Popover from '@mui/material/Popover';
 
-
-
-const Movie = ({item}) => {
+const Movie = ({item, type}) => {
     const [like, setLike] = useState([false])
     // eslint-disable-next-line
     const [saved, setSaved] = useState(false)
@@ -28,6 +27,7 @@ const Movie = ({item}) => {
     // eslint-disable-next-line
     const [showPopover, setShowPopover] = useState(false)
     const [openPopover, setPopover] = useState(false)
+    let navigate = useNavigate();
 
     const truncateString = (str, num) => {
       if(str?.length > num) {
@@ -89,6 +89,11 @@ const Movie = ({item}) => {
       setAnchorEl(null);
     }
 
+    const navigateToPlay = () => {
+      let path = `/play`; 
+      navigate(path);
+    }
+
   return (
     <>
     {/* Some movies or tvshows have no image (backdrop_path) that's why we do this ternary */}
@@ -119,7 +124,7 @@ const Movie = ({item}) => {
               </div>
               <div className="flex absolute px-12 py-4 top-[70%]">
                 <div className="flex justify-center items-center mr-2.5 cursor-pointer">
-                  <button className="border bg-slate-100 text-black border-gray-300 hover:bg-gray-300 py-2 px-5 font-bold flex items-center min-w-[110px]"><FaPlay className="mr-3 "/>Play</button>
+                  <button className="border bg-slate-100 text-black border-gray-300 hover:bg-gray-300 py-2 px-5 font-bold flex items-center min-w-[110px]" onClick={navigateToPlay}><FaPlay className="mr-3"/>Play</button>
                 </div>
                 <div className="movieButtons flex justify-center items-center mr-2.5 cursor-pointer" onClick={saveShow}>
                   { like ? <FaPlus className=""/> :  <FaCheck />}
@@ -128,13 +133,13 @@ const Movie = ({item}) => {
                     <FaThumbsUp />
                 </div>
               </div>
-              {open ?  <RPlayer movieItem={item}/> : null}
+              {open ?  <RPlayer movieItem={item} type={type}/> : null}
             </div>
           <div className="bg-[#000] px-12 py-4 text-white">
             <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200 mb-4">{item?.title ? item?.title : item?.name}</p>
-            <p className="text-gray-400 text-sm pb-4">Released: {item?.release_date}</p>
-            <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200 mb-4">{item?.overview}</p>
-            <Genres genre={item}/>
+            <p className="text-gray-400 text-sm pb-4">Released: {item?.release_date ? item?.release_date : item?.first_air_date}</p>
+            <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200 mb-4">{item?.overview ? item?.overview : "We don't have an overview yet."}</p>
+            <Genres genre={item} type={type} className="mb-2.5"/>
           </div>
           
         </div>
@@ -161,7 +166,7 @@ const Movie = ({item}) => {
           </div>
           <div className="flex justify-between p-5">
             <div className="flex">
-              <div className="movieButtonPlay flex justify-center items-center mr-2.5 cursor-pointer">
+              <div className="movieButtonPlay flex justify-center items-center mr-2.5 cursor-pointer" onClick={navigateToPlay}>
                 <FaPlay className="text-[#181818]"/>
               </div>
               <div className="movieButtons flex justify-center items-center mr-2.5 cursor-pointer">
@@ -177,9 +182,8 @@ const Movie = ({item}) => {
           </div>
         </div>
         <div className="pl-5 text-white">
-          <div className="mb-2.5">Release date: {item?.release_date}</div>
-          <Genres genre={item}/>
-        
+          <div className="mb-2.5">Release date: {item?.release_date ? item?.release_date : item?.first_air_date}</div>
+          <Genres genre={item} type={type} className="mb-2.5"/>
         </div>
       </div>
       </Popover>
