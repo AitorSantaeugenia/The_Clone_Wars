@@ -82,7 +82,7 @@ const Movie = ({item, type}) => {
         setPopover(true);
         setShowPopover(true)
         setAnchorEl(divRef.current)
-    }, 1000);
+    }, 500);
     }
 
     const cancelPopOverDiv = () => {
