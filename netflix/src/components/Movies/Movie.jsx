@@ -82,7 +82,7 @@ const Movie = ({item, type}) => {
         setPopover(true);
         setShowPopover(true)
         setAnchorEl(divRef.current)
-    }, 500);
+    }, 800);
     }
 
     const cancelPopOverDiv = () => {
@@ -145,9 +145,9 @@ const Movie = ({item, type}) => {
               {open ?  <RPlayer movieItem={item} type={type}/> : null}
             </div>
           <div className="bg-[#000] px-12 py-4 text-white">
-            <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200 mb-4">{item?.title ? item?.title : item?.name}</p>
+            <p className="w-full md:max-w-[70%] lg:max-w-[50%] text-gray-200 mb-4">{item?.title ? item?.title : item?.name}</p>
             <p className="text-gray-400 text-sm pb-4">Released: {item?.release_date ? item?.release_date : item?.first_air_date}</p>
-            <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200 mb-4">{item?.overview ? item?.overview : "We don't have an overview yet."}</p>
+            <p className="w-full md:max-w-[70%] lg:max-w-[50%] text-gray-200 mb-4">{item?.overview ? item?.overview : "We don't have an overview yet."}</p>
             <Genres genre={item} type={type} className="mb-2.5"/>
           </div>
           
