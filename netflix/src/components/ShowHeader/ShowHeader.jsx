@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
-import requests from '../../Request'
+import requests from '../../../src/Request'
 import "./ShowHeader.css"
 import { FaPlay } from 'react-icons/fa';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
