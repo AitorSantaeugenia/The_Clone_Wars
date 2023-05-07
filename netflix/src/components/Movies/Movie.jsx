@@ -165,7 +165,7 @@ const Movie = ({item, type}) => {
           vertical: 'center',
           horizontal: 'center',
         }}
-        className="ml-[-60px]"
+        // className="ml-[-60px]" <- This is commented cos a fix with deploy version
       >
       <div className="popOver block" onMouseLeave={hidePopOver}>
         <div className="flex flex-col">
