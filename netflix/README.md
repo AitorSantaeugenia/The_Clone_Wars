@@ -12,39 +12,6 @@ https://netflix-cl-90b7a.web.app/ || [or here](https://netflix-cl-90b7a.web.app/
 testing@test.com
 Testing
 ~~~
-
-<details>
-  <summary><code>Why a clone of netflix?</code></summary>
-
-  ```javascript
-   // I want to create Frontend copies (with ReactJS, Tailwind, NetxJS, GrapQL or other tecnologies)
-   // of all famous websites, just to keep learning.
-   // Some of them, will have backend too with NodeJS, ExpressJS, Mongoose, MongoDB, Firebase, etc.
-  ```  
-</details>
-
----
-<code>Adding and removing movies to your list:</code>
-<div align="center">
-
-![Adding-Removing](https://user-images.githubusercontent.com/14861253/193696864-e22c41ce-2286-4a2e-9516-38b7b32d0e5a.gif)
-</div>
-
-<code>Demonstration:</code>
-<div align="center">
-
-![Demo](https://user-images.githubusercontent.com/14861253/193696115-a341f5bc-da9b-4574-8668-f51272a8c06a.gif)
-</div>
-
-<code>Fully responsive:</code>
-<div align="center">
-
-![Responsive](https://user-images.githubusercontent.com/14861253/193696191-4a2c5b73-4856-4928-a2ce-5dda72d26d3b.gif)
-
-</div>
-
----
-
 ## Dependencies
   <code>yarn install || npm i</code>
 
@@ -82,6 +49,44 @@ We are using The Movie Database API, you can find it here:
   REACT_APP_MESSAGING_SENDER=yours
   REACT_APP_APP_ID=yours
 ~~~
+
+---
+<details>
+  <summary><code>Why a clone of netflix?</code></summary>
+
+  ```javascript
+   // I want to create Frontend copies (with ReactJS, Tailwind, NetxJS, GrapQL or other tecnologies)
+   // of all famous websites, just to keep learning.
+   // Some of them, will have backend too with NodeJS, ExpressJS, Mongoose, MongoDB, Firebase, etc.
+  ```  
+</details>
+
+---
+
+<code>If you select the info button or the dropdown, if themoviedb API has a trailer for the selected movie, will start playing it. </code>
+<div align="center">
+
+![Adding-Removing](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcm5xbnNjdXFxOWoybWp2aWFxeXN1bzkyMDdnZW1va2J0dThyMG10YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QgGdoOZSYiv6W49IoO/giphy.gif)
+</div>
+
+<code>Adding and removing movies to your list:</code>
+<div align="center">
+
+![Adding-Removing](https://user-images.githubusercontent.com/14861253/193696864-e22c41ce-2286-4a2e-9516-38b7b32d0e5a.gif)
+</div>
+
+<code>Demonstration:</code>
+<div align="center">
+
+![Demo](https://user-images.githubusercontent.com/14861253/193696115-a341f5bc-da9b-4574-8668-f51272a8c06a.gif)
+</div>
+
+<code>Fully responsive:</code>
+<div align="center">
+
+![Responsive](https://user-images.githubusercontent.com/14861253/193696191-4a2c5b73-4856-4928-a2ce-5dda72d26d3b.gif)
+
+</div>
 
 ---
 
