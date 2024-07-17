@@ -1,9 +1,9 @@
 # Netflix clone with React, Tailwind CSS & Firebase
 
 ## Introduction 
-<code>Note:</code> since it's under construction (not finished yet), maybe some functions are dissabled (like login or my list)</br>
-Also, firestore database will only work until 1/11/2022. Then will stop working (maybe I renew the dates, maybe not)...</br>
-<code>For sure the repo is better than the online one</code></br>
+<code>The project is using React.js, Tailwind (not components) and themoviedb API (amazing one). </code></br>
+<code>If you hover a movie, you can even watch the trailer (if it exist in themovieDB API). </code></br>
+<code>If you click the play button, it will play a video of the Netflix opening for just 4 seconds (muted, cos reasons). </code></br>
 
 ## Deploy
 https://netflix-cl-90b7a.web.app/ || [or here](https://netflix-cl-90b7a.web.app/)
@@ -86,9 +86,10 @@ We are using The Movie Database API, you can find it here:
 ---
 
 ## TODO
-- Improve acordion function
-- Chevron netflix alike
-- Carousel
-- Play video
-- Modal for more info about movie/TV serie -> done in local version, need a fix tho
-- Maybe explore another options with the API
+- ~~Improve acordion function~~
+- ~~Chevron netflix alike~~
+- ~~Carousel~~
+- ~~Play video~~
+- ~~Modal for more info about movie/TV serie -> done in local version, need a fix tho~~
+- ~~Maybe explore another options with the API~~ 
+- I'm done with the project.
