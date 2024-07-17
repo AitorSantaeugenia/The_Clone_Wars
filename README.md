@@ -3,7 +3,7 @@
 ## Project #1 - Netflix:
 <code>Done using ReactJS, Tailwind, Firebase and themoviedb API</code></br>
     Check code: [https://github.com/AitorSantaeugenia/The_Clone_Wars/tree/master/netflix](https://github.com/AitorSantaeugenia/The_Clone_Wars/tree/master/netflix) </br>
-    Check demo: [https://netflix-tcw.web.app/](https://netflix-tcw.web.app/)
+    Check demo: [https://netflix-cl-90b7a.web.app/](https://netflix-cl-90b7a.web.app/)
 
 <details>
   <summary><code>Why netflix?</code></summary>
