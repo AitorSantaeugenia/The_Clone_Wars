@@ -6,7 +6,7 @@ Also, firestore database will only work until 1/11/2022. Then will stop working 
 <code>For sure the repo is better than the online one</code></br>
 
 ## Deploy
-https://netflix-tcw.web.app/ || [or here](https://netflix-tcw.web.app/)
+https://netflix-cl-90b7a.web.app/ || [or here](https://netflix-cl-90b7a.web.app/)
 
 ~~~
 testing@test.com
